@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Star, Sparkles, Beaker, BookOpen, ExternalLink, Tag, Info } from "lucide-react";
+import { Star, Sparkles, Beaker, BookOpen, ExternalLink, Info } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";

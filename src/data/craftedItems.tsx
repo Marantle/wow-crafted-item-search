@@ -143,7 +143,7 @@ export const craftedItemsData: CraftedItem[] = [
     missiveQuality: 3,
     crafter: "Thraut",
     realm: "Sylvanas",
-    tags: ["one-hand", "sword", "intellect"],
+    tags: ["one-hand", "dagger", "intellect"],
     skillBoosterId: 1020,
     concentrate: 215,
     itemLevel: 636,
@@ -240,7 +240,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 590,
   },
   {
-    id: 21,
+    id: 22,
     name: "Inquisitor's Crutch",
     materials: [
       // { id: 210808, name: "Arathor's Spear" },
