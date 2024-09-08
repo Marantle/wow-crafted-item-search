@@ -35,8 +35,8 @@ export default function ItemBadges({
         <Image
           src={`/icons/${embellishedQuality}.png`}
           alt={`Quality ${embellishedQuality}`}
-          width={16}
-          height={16}
+          width={embellishedQuality === 1 ? 12 : 24}
+          height={embellishedQuality === 1 ? 12 : 24}
           className="ml-1"
         />
       </Badge>
@@ -46,8 +46,8 @@ export default function ItemBadges({
         <Image
           src={`/icons/${missiveQuality}.png`}
           alt={`Quality ${missiveQuality}`}
-          width={16}
-          height={16}
+          width={missiveQuality === 1 ? 12 : 24}
+          height={missiveQuality === 1 ? 12 : 24}
           className="ml-1"
         />
       </Badge>

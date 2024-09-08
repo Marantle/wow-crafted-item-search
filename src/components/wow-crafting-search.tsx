@@ -10,8 +10,8 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import CraftedItemResult from "./CraftedItemResult";
-import ComparisonTool from "./ComparisonTool";
+import CraftedItemResult from "@/components/CraftedItemResult";
+import ComparisonTool from "@/components/ComparisonTool";
 import { craftedItemsData } from "@/data/craftedItems";
 import { useFavorites } from "@/hooks/useFavorites";
 import { Button } from "@/components/ui/button";
@@ -79,7 +79,7 @@ export default function WowCraftingSearch() {
       <div className="mb-4">
         <Command shouldFilter={false} className="rounded-lg border shadow-md">
           <CommandInput
-            placeholder="Hae reseptejä nimen, valmistajan, tason tai tagien perusteella..."
+            placeholder="Hae reseptejä nimen, käsityöläisen, levelin tai tagien perusteella..."
             value={searchTerm}
             onValueChange={handleSearchChange}
             className="w-full"
@@ -96,7 +96,7 @@ export default function WowCraftingSearch() {
                   <div>
                     <div>{item.name}</div>
                     <div className="text-sm text-muted-foreground">
-                      Taso: {item.itemLevel} | Tagit: {item.tags.join(", ")}
+                      Level: {item.itemLevel} | Tagit: {item.tags.join(", ")}
                     </div>
                   </div>
                 </CommandItem>

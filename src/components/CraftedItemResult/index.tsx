@@ -59,7 +59,6 @@ export default function CraftedItemResult({
           <h3 className="text-lg font-semibold mb-2">Required Materials</h3>
           <MaterialsList
             materials={item.materials}
-            truncatedMaterials={[]}
             materialRefs={[]}
           />
         </div>

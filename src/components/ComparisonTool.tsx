@@ -16,9 +16,7 @@ export default function ComparisonTool({
   items,
   onRemoveItem,
 }: ComparisonToolProps) {
-  const [truncatedMaterials, setTruncatedMaterials] = useState<
-    Record<number, number[]>
-  >({});
+
   const materialRefs = useRef<Record<number, (HTMLSpanElement | null)[]>>({});
 
   if (items.length === 0) {
@@ -63,7 +61,6 @@ export default function ComparisonTool({
               <h4 className="font-semibold mt-4 mb-2">Required Materials</h4>
               <MaterialsList
                 materials={item.materials}
-                truncatedMaterials={truncatedMaterials[item.id] || []}
                 materialRefs={materialRefs.current[item.id] || []}
               />
             </div>

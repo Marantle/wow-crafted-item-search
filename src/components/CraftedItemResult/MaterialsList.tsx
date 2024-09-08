@@ -1,24 +1,15 @@
 import Image from "next/image";
-import { Info } from "lucide-react";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Button } from "@/components/ui/button";
 import { materials } from "@/data/craftedItems";
 import { CraftedItemMaterial } from "@/types/craftingTypes";
 import { getMaterialIconFilename } from "@/lib/utils";
 
 interface MaterialsListProps {
   materials: CraftedItemMaterial[];
-  truncatedMaterials: number[];
   materialRefs: (HTMLSpanElement | null)[];
 }
 
 export default function MaterialsList({
   materials: itemMaterials,
-  truncatedMaterials,
   materialRefs,
 }: MaterialsListProps) {
   return (
@@ -45,8 +36,8 @@ export default function MaterialsList({
                     <Image
                       src={`/icons/${materialItem.quality}.png`}
                       alt={`Quality ${materialItem.quality}`}
-                      width={24}
-                      height={24}
+                      width={materialItem.quality === 1 ? 12 : 24}
+                      height={materialItem.quality === 1 ? 12 : 24}
                       className="rounded-full"
                     />
                   </div>
@@ -62,25 +53,6 @@ export default function MaterialsList({
               >
                 {materialItem.quantity} x {material.name}
               </span>
-              {truncatedMaterials.includes(index) && (
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="p-0 h-6 w-6 ml-1"
-                    >
-                      <Info className="h-4 w-4" />
-                      <span className="sr-only">More info</span>
-                    </Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-2">
-                    <p>
-                      {materialItem.quantity} x {material.name}
-                    </p>
-                  </PopoverContent>
-                </Popover>
-              )}
             </div>
           </li>
         );
