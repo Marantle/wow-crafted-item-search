@@ -15,9 +15,26 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Maako's Budget Max Quality Recipes",
-  description:
-    "Search and compare Maako's budget max quality recipes for WoW crafting",
+  title: "Maakon Budjettireseptit",
+  description: "Hae ja  Maakon budjettireseptejä",
+  openGraph: {
+    title: "Maakon BudjettiReseptit",
+    description: "Hae ja vertaile Maakon budjettireseptejä",
+    images: [
+      {
+        url: '/logo.png',
+        width: 500,
+        height: 500,
+        alt: 'Maakon Budjettireseptit Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Maakon Budjetti Huippulaadun Reseptit",
+    description: "Hae ja vertaile Maakon budjettireseptejä",
+    images: ['/logo.png'],
+  },
 };
 
 export default function RootLayout({
