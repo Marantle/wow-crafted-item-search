@@ -1,32 +1,32 @@
-import { useRef } from 'react'
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Heart, Scale, Hammer, User } from "lucide-react"
-import { CraftedItem } from '@/types/craftingTypes'
-import ItemBadges from './ItemBadges'
-import MaterialsList from './MaterialsList'
-import { skillBoosters } from '@/data/craftedItems'
+import { useRef } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Heart, Scale, Hammer, User } from "lucide-react";
+import { CraftedItem } from "@/types/craftingTypes";
+import ItemBadges from "./ItemBadges";
+import MaterialsList from "./MaterialsList";
+import { skillBoosters } from "@/data/craftedItems";
 
 interface CraftedItemResultProps {
-  item: CraftedItem
-  onToggleFavorite: (itemId: number) => void
-  onToggleCompare: (itemId: number) => void
-  isFavorite: boolean
-  isComparing: boolean
+  item: CraftedItem;
+  onToggleFavorite: (itemId: number) => void;
+  onToggleCompare: (itemId: number) => void;
+  isFavorite: boolean;
+  isComparing: boolean;
 }
 
-export default function CraftedItemResult({ 
-  item, 
-  onToggleFavorite, 
-  onToggleCompare, 
-  isFavorite, 
-  isComparing 
+export default function CraftedItemResult({
+  item,
+  onToggleFavorite,
+  onToggleCompare,
+  isFavorite,
+  isComparing,
 }: CraftedItemResultProps) {
-  const titleRef = useRef<HTMLHeadingElement>(null)
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
-  const skillBooster = item.skillBoosterId 
-    ? skillBoosters.find(booster => booster.id === item.skillBoosterId)
-    : undefined
+  const skillBooster = item.skillBoosterId
+    ? skillBoosters.find((booster) => booster.id === item.skillBoosterId)
+    : undefined;
 
   return (
     <Card className="mb-4 overflow-hidden">
@@ -46,7 +46,7 @@ export default function CraftedItemResult({
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-2 mb-4">
-          <ItemBadges 
+          <ItemBadges
             itemLevel={item.itemLevel}
             embellishedQuality={item.embellishedQuality}
             missiveQuality={item.missiveQuality}
@@ -57,8 +57,8 @@ export default function CraftedItemResult({
         </div>
         <div className="mb-4">
           <h3 className="text-lg font-semibold mb-2">Required Materials</h3>
-          <MaterialsList 
-            materials={item.materials} 
+          <MaterialsList
+            materials={item.materials}
             truncatedMaterials={[]}
             materialRefs={[]}
           />
@@ -68,7 +68,9 @@ export default function CraftedItemResult({
             variant="outline"
             size="sm"
             onClick={() => onToggleFavorite(item.id)}
-            aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+            aria-label={
+              isFavorite ? "Remove from favorites" : "Add to favorites"
+            }
           >
             <Heart className={`h-4 w-4 ${isFavorite ? "fill-red-500" : ""}`} />
           </Button>
@@ -76,12 +78,16 @@ export default function CraftedItemResult({
             variant="outline"
             size="sm"
             onClick={() => onToggleCompare(item.id)}
-            aria-label={isComparing ? "Remove from comparison" : "Add to comparison"}
+            aria-label={
+              isComparing ? "Remove from comparison" : "Add to comparison"
+            }
           >
-            <Scale className={`h-4 w-4 ${isComparing ? "text-blue-500" : ""}`} />
+            <Scale
+              className={`h-4 w-4 ${isComparing ? "text-blue-500" : ""}`}
+            />
           </Button>
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

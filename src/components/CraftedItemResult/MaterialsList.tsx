@@ -7,8 +7,8 @@ import {
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { materials } from "@/data/craftedItems";
-import { getIconFilename } from "@/lib/utils";
 import { CraftedItemMaterial } from "@/types/craftingTypes";
+import { getMaterialIconFilename } from "@/lib/utils";
 
 interface MaterialsListProps {
   materials: CraftedItemMaterial[];
@@ -28,12 +28,13 @@ export default function MaterialsList({
           (m) => m.id === materialItem.materialId
         );
         if (!material) return null;
+        const iconFilename = getMaterialIconFilename(material.id);
         return (
           <li key={index} className="flex items-center">
             <div className="flex items-center flex-grow">
               <div className="relative mr-2 flex-shrink-0">
                 <Image
-                  src={`/materials/${getIconFilename(material.name)}`}
+                  src={`/materials/${iconFilename}`}
                   alt={material.name}
                   width={48}
                   height={48}

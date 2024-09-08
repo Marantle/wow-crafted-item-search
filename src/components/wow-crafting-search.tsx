@@ -23,14 +23,24 @@ export default function WowCraftingSearch() {
   const [comparing, setComparing] = useState<number[]>([]);
 
   const filteredItems = useMemo(() => {
-    return craftedItemsData.filter(
-      (item) =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.crafter.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.tags.some((tag) =>
-          tag.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-    );
+    if (!searchTerm.trim()) return craftedItemsData;
+
+    const searchTerms = searchTerm.toLowerCase().split(/\s+/).filter(Boolean);
+
+    return craftedItemsData.filter((item) => {
+      const itemName = item.name.toLowerCase();
+      const itemCrafter = item.crafter.toLowerCase();
+      const itemTags = item.tags.map((tag) => tag.toLowerCase());
+      const itemLevel = item.itemLevel.toString();
+
+      return searchTerms.every(
+        (term) =>
+          itemName.includes(term) ||
+          itemCrafter.includes(term) ||
+          itemTags.some((tag) => tag.includes(term)) ||
+          itemLevel.includes(term)
+      );
+    });
   }, [searchTerm]);
 
   const toggleCompare = useCallback((itemId: number) => {
@@ -57,25 +67,25 @@ export default function WowCraftingSearch() {
     <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
         <h1 className="text-3xl font-bold mb-4 sm:mb-0">
-          Maako's Budget Max Quality Recipes
+          Maakon budjetti reseptit
         </h1>
         <Link href="/favorites">
           <Button variant="outline">
             <Heart className="mr-2 h-4 w-4" />
-            Favorites
+            Suosikit
           </Button>
         </Link>
       </div>
       <div className="mb-4">
         <Command shouldFilter={false} className="rounded-lg border shadow-md">
           <CommandInput
-            placeholder="Search recipes by name, crafter, or tags..."
+            placeholder="Hae reseptejä nimen, valmistajan, tason tai tagien perusteella..."
             value={searchTerm}
             onValueChange={handleSearchChange}
             className="w-full"
           />
           <CommandList className="max-h-[300px] overflow-y-auto rounded-b-lg">
-            <CommandEmpty>No recipes found.</CommandEmpty>
+            <CommandEmpty>Reseptejä ei löytynyt.</CommandEmpty>
             <CommandGroup>
               {filteredItems.map((item) => (
                 <CommandItem
@@ -86,7 +96,7 @@ export default function WowCraftingSearch() {
                   <div>
                     <div>{item.name}</div>
                     <div className="text-sm text-muted-foreground">
-                      Tags: {item.tags.join(", ")}
+                      Taso: {item.itemLevel} | Tagit: {item.tags.join(", ")}
                     </div>
                   </div>
                 </CommandItem>
@@ -115,7 +125,7 @@ export default function WowCraftingSearch() {
       </div>
       {filteredItems.length === 0 && (
         <p className="text-center text-gray-500 mt-4">
-          No recipes found matching your search.
+          Hakuasi vastaavia reseptejä ei löytynyt.
         </p>
       )}
     </div>

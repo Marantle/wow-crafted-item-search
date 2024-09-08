@@ -32,11 +32,11 @@ export default function FavoritesPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">Favorite Recipes</h1>
+        <h1 className="text-3xl font-bold">Suosikkireseptit</h1>
         <Link href="/">
           <Button variant="outline">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Search
+            Takaisin hakuun
           </Button>
         </Link>
       </div>
@@ -51,7 +51,7 @@ export default function FavoritesPage() {
       <div className="mt-8">
         {favoriteItems.length === 0 ? (
           <p className="text-center text-gray-500">
-            You haven't added any favorites yet.
+            Et ole vielä lisännyt suosikkeja.
           </p>
         ) : (
           favoriteItems.map((item) => (
