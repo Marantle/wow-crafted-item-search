@@ -20,7 +20,7 @@ export const materials: Material[] = [
 
 export const craftedItemsData: CraftedItem[] = [
   {
-    id: 1,
+    id: 219339,
     name: "Glyph-Etched Binding",
     materials: [
       { materialId: 221757, quantity: 1, quality: 3 },
@@ -38,7 +38,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 636,
   },
   {
-    id: 2,
+    id: 219335,
     name: "Glyph-Etched Stompers",
     materials: [
       { materialId: 221757, quantity: 1, quality: 0 },
@@ -56,7 +56,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 636,
   },
   {
-    id: 322,
+    id: 219473,
     name: "Tracker's Chitin Galoshes",
     materials: [
       { materialId: 212667, quantity: 2, quality: 1 },
@@ -72,7 +72,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 590,
   },
   {
-    id: 323,
+    id: 219485,
     name: "Tracker's Toughened Girdle",
     materials: [
       { materialId: 212667, quantity: 30, quality: 3 },
@@ -87,7 +87,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 590,
   },
   {
-    id: 4,
+    id: 222447,
     name: "Charged Claymore",
     materials: [
       //   { id: 219903, name: "Storm-Touched Weapon Wrap" },
@@ -106,7 +106,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 636,
   },
   {
-    id: 5,
+    id: 222444,
     name: "Charged Hexsword",
     materials: [
       // { id: 219013, name: "Superb Beast Fang" },
@@ -127,7 +127,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 636,
   },
   {
-    id: 6,
+    id: 222439,
     name: "Everforged Dagger",
     materials: [
       // { id: 219013, name: "Superb Beast Fang" },
@@ -149,7 +149,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 636,
   },
   {
-    id: 7,
+    id: 222441,
     name: "Everforged Warglaive",
     materials: [
       // { id: 219013, name: "Superb Beast Fang" },
@@ -170,7 +170,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 636,
   },
   {
-    id: 8,
+    id: 222440,
     name: "Everforged Longsword",
     materials: [
       // { id: 219013, name: "Superb Beast Fang" },
@@ -191,7 +191,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 636,
   },
   {
-    id: 9,
+    id: 222566,
     name: "Vagabond's Torch",
     materials: [
       // { id: 210808, name: "Arathor's Spear" },
@@ -208,7 +208,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 636,
   },
   {
-    id: 20,
+    id: 222565,
     name: "Inquisitor's Torch",
     materials: [
       // { id: 210808, name: "Arathor's Spear" },
@@ -224,7 +224,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 590,
   },
   {
-    id: 21,
+    id: 222570,
     name: "Inquisitor's Baton",
     materials: [
       // { id: 210808, name: "Arathor's Spear" },
@@ -240,7 +240,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 590,
   },
   {
-    id: 22,
+    id: 222569,
     name: "Inquisitor's Crutch",
     materials: [
       // { id: 210808, name: "Arathor's Spear" },
@@ -256,7 +256,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 590,
   },
   {
-    id: 31,
+    id: 217916,
     name: "Ironclaw Sword",
     materials: [
       { materialId: 210936, quantity: 3, quality: 2 },
@@ -271,7 +271,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 590,
   },
   {
-    id: 41,
+    id: 222465,
     name: "Ironclaw Dirk",
     materials: [
       { materialId: 210936, quantity: 5, quality: 2 },
@@ -285,7 +285,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 590,
   },
   {
-    id: 42,
+    id: 222464,
     name: "Ironclaw Stiletto",
     materials: [
       { materialId: 210936, quantity: 5, quality: 2 },
@@ -299,7 +299,7 @@ export const craftedItemsData: CraftedItem[] = [
     itemLevel: 590,
   },
   {
-    id: 46,
+    id: 222467,
     name: "Ironclaw Knuckles",
     materials: [
       { materialId: 210936, quantity: 5, quality: 2 },
