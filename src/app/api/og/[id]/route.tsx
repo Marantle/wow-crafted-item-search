@@ -97,12 +97,25 @@ export async function GET(
               }}
             >
               Embellished:
-              <img
-                src={`${baseUrl}/icons/${item.embellishedQuality}.png`}
-                width="48"
-                height="48"
-                style={{ marginLeft: 5 }}
-              />
+              <div
+                style={{
+                  width: "32px",
+                  height: "32px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginLeft: 5,
+                }}
+              >
+                <img
+                  src={`${baseUrl}/icons/${item.embellishedQuality}.png`}
+                  width={item.embellishedQuality === 1 ? "24" : "32"}
+                  height={item.embellishedQuality === 1 ? "24" : "32"}
+                  style={{
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
             </span>
           )}
           {item.missiveQuality > 0 && (
@@ -116,12 +129,25 @@ export async function GET(
               }}
             >
               Missive:
-              <img
-                src={`${baseUrl}/icons/${item.missiveQuality}.png`}
-                width={item.missiveQuality === 1 ? "24" : "48"}
-                height={item.missiveQuality === 1 ? "24" : "48"}
-                style={{ marginLeft: 5 }}
-              />
+              <div
+                style={{
+                  width: "32px",
+                  height: "32px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginLeft: 5,
+                }}
+              >
+                <img
+                  src={`${baseUrl}/icons/${item.missiveQuality}.png`}
+                  width={item.missiveQuality === 1 ? "24" : "32"}
+                  height={item.missiveQuality === 1 ? "24" : "32"}
+                  style={{
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
             </span>
           )}
           {item.tags.map((tag, index) => (
@@ -184,17 +210,29 @@ export async function GET(
                       }}
                     />
                     {material.quality > 0 && (
-                      <img
-                        src={`${baseUrl}/icons/${material.quality}.png`}
-                        width={material.quality === 1 ? "24" : "48"}
-                        height={material.quality === 1 ? "24" : "48"}
+                      <div
                         style={{
                           position: "absolute",
                           top: 0,
                           left: 0,
+                          width: "48px",
+                          height: "48px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          background: "rgba(255, 255, 255, 0.7)",
                           borderRadius: "50%",
                         }}
-                      />
+                      >
+                        <img
+                          src={`${baseUrl}/icons/${material.quality}.png`}
+                          width="40"
+                          height="40"
+                          style={{
+                            objectFit: "contain",
+                          }}
+                        />
+                      </div>
                     )}
                   </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>
