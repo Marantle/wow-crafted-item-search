@@ -1,7 +1,8 @@
 import { useRef } from "react";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Scale, Hammer, User } from "lucide-react";
+import { Heart, Scale, Hammer, User, ExternalLink } from "lucide-react";
 import { CraftedItem } from "@/types/craftingTypes";
 import ItemBadges from "./ItemBadges";
 import MaterialsList from "./MaterialsList";
@@ -57,10 +58,7 @@ export default function CraftedItemResult({
         </div>
         <div className="mb-4">
           <h3 className="text-lg font-semibold mb-2">Required Materials</h3>
-          <MaterialsList
-            materials={item.materials}
-            materialRefs={[]}
-          />
+          <MaterialsList materials={item.materials} materialRefs={[]} />
         </div>
         <div className="flex justify-end space-x-2">
           <Button
@@ -85,6 +83,15 @@ export default function CraftedItemResult({
               className={`h-4 w-4 ${isComparing ? "text-blue-500" : ""}`}
             />
           </Button>
+          <Link href={`/recipe/${item.id}`} passHref>
+            <Button
+              variant="outline"
+              size="sm"
+              aria-label="View full recipe details"
+            >
+              <ExternalLink className="h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </CardContent>
     </Card>
