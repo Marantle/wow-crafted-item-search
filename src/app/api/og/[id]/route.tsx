@@ -33,6 +33,9 @@ export async function GET(
     ? skillBoosters.find((booster) => booster.id === item.skillBoosterId)
     : undefined;
 
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL;
+
   console.log("Generating image for item:", item.name);
 
   return new ImageResponse(
@@ -106,7 +109,7 @@ export async function GET(
                 }}
               >
                 <img
-                  src={`/icons/${item.embellishedQuality}.png`}
+                  src={`${baseUrl}/icons/${item.embellishedQuality}.png`}
                   width={item.embellishedQuality === 1 ? "24" : "32"}
                   height={item.embellishedQuality === 1 ? "24" : "32"}
                   style={{
@@ -138,7 +141,7 @@ export async function GET(
                 }}
               >
                 <img
-                  src={`/icons/${item.missiveQuality}.png`}
+                  src={`${baseUrl}/icons/${item.missiveQuality}.png`}
                   width={item.missiveQuality === 1 ? "24" : "32"}
                   height={item.missiveQuality === 1 ? "24" : "32"}
                   style={{
@@ -195,7 +198,7 @@ export async function GET(
                     }}
                   >
                     <img
-                      src={`/materials/${getMaterialIconFilename(
+                      src={`${baseUrl}/materials/${getMaterialIconFilename(
                         material.materialId
                       )}`}
                       width="96"
@@ -223,7 +226,7 @@ export async function GET(
                         }}
                       >
                         <img
-                          src={`/icons/${material.quality}.png`}
+                          src={`${baseUrl}/icons/${material.quality}.png`}
                           width="40"
                           height="40"
                           style={{
