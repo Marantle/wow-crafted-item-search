@@ -66,10 +66,13 @@ export default function WowCraftingSearch() {
   return (
     <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
-        <h1 className="text-3xl font-bold mb-4 sm:mb-0">
+        <h1
+          className="text-3xl font-bold mb-4 sm:mb-0"
+          data-testid="page-title"
+        >
           Maakon budjettireseptit
         </h1>
-        <Link href="/favorites">
+        <Link href="/favorites" data-testid="favorites-link">
           <Button variant="outline">
             <Heart className="mr-2 h-4 w-4" />
             Suosikit

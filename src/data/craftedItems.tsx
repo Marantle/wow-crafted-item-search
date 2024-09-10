@@ -59,8 +59,8 @@ export const craftedItemsData: CraftedItem[] = [
     id: 219473,
     name: "Tracker's Chitin Galoshes",
     materials: [
-      { materialId: 212667, quantity: 2, quality: 1 },
-      { materialId: 212667, quantity: 18, quality: 3 },
+      { materialId: 212667, quantity: 4, quality: 1 },
+      { materialId: 212667, quantity: 16, quality: 3 },
       { materialId: 212664, quantity: 10, quality: 2 },
     ],
     embellishedQuality: 1,
