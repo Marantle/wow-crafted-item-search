@@ -32,8 +32,10 @@ export default function FavoritesPage() {
   return (
     <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">Suosikkireseptit</h1>
-        <Link href="/">
+        <h1 className="text-3xl font-bold" data-testid="page-title">
+          Suosikkireseptit
+        </h1>
+        <Link href="/" data-testid="back-to-search">
           <Button variant="outline">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Takaisin hakuun

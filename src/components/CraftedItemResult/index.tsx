@@ -30,12 +30,16 @@ export default function CraftedItemResult({
     : undefined;
 
   return (
-    <Card className="mb-4 overflow-hidden">
+    <Card className="mb-4 overflow-hidden" data-testid="recipe-card">
       <CardContent className="p-4">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
           <div className="flex items-center mb-2 sm:mb-0">
             <Hammer className="w-5 h-5 mr-2 flex-shrink-0" />
-            <h2 ref={titleRef} className="text-lg font-semibold truncate">
+            <h2
+              ref={titleRef}
+              className="text-lg font-semibold truncate"
+              data-testid="recipe-name"
+            >
               {item.name}
             </h2>
           </div>
@@ -68,6 +72,7 @@ export default function CraftedItemResult({
             aria-label={
               isFavorite ? "Remove from favorites" : "Add to favorites"
             }
+            data-testid="favorite-button"
           >
             <Heart className={`h-4 w-4 ${isFavorite ? "fill-red-500" : ""}`} />
           </Button>

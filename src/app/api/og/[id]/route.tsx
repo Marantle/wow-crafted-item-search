@@ -33,8 +33,7 @@ export async function GET(
     ? skillBoosters.find((booster) => booster.id === item.skillBoosterId)
     : undefined;
 
-  const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
   console.log("Generating image for item:", item.name);
 
@@ -112,6 +111,7 @@ export async function GET(
                   src={`${baseUrl}/icons/${item.embellishedQuality}.png`}
                   width={item.embellishedQuality === 1 ? "24" : "32"}
                   height={item.embellishedQuality === 1 ? "24" : "32"}
+                  alt="Embellished quality icon"
                   style={{
                     objectFit: "contain",
                   }}
@@ -144,6 +144,7 @@ export async function GET(
                   src={`${baseUrl}/icons/${item.missiveQuality}.png`}
                   width={item.missiveQuality === 1 ? "24" : "32"}
                   height={item.missiveQuality === 1 ? "24" : "32"}
+                  alt="Missive quality icon"
                   style={{
                     objectFit: "contain",
                   }}
@@ -203,6 +204,11 @@ export async function GET(
                       )}`}
                       width="96"
                       height="96"
+                      alt={`Material: ${
+                        materialInfo
+                          ? materialInfo.name
+                          : `Unknown Material (${material.materialId})`
+                      }`}
                       style={{
                         borderRadius: 8,
                         position: "absolute",
@@ -229,6 +235,7 @@ export async function GET(
                           src={`${baseUrl}/icons/${material.quality}.png`}
                           width="40"
                           height="40"
+                          alt={`Quality ${material.quality}`}
                           style={{
                             objectFit: "contain",
                           }}
