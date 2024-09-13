@@ -3,6 +3,7 @@ import { CraftedItem, Material, SkillBooster } from "@/types/craftingTypes";
 export const materials: Material[] = [
   { id: 221757, name: "Gloomfathom Hide" },
   { id: 212667, name: "Gloom Chitin" },
+  { id: 219880, name: "Carapace-Backed Hide" },
   { id: 219883, name: "Crystalfused Hide" },
   { id: 219889, name: "Sporecoated Hide" },
   { id: 219898, name: "Chitin Armor Banding" },
@@ -19,6 +20,21 @@ export const materials: Material[] = [
 ];
 
 export const craftedItemsData: CraftedItem[] = [
+  {
+    id: 217140,
+    name: "Algari-Competitor's Gauntlets, Treads, Girdle",
+    materials: [
+      { materialId: 219880, quantity: 1, quality: 3 },
+      { materialId: 212667, quantity: 75, quality: 3 },
+    ],
+    embellishedQuality: 3,
+    missiveQuality: 3,
+    concentrate: 0,
+    crafter: "Inath",
+    realm: "Sylvanas",
+    tags: ["mail", "belt", "boots", "gloves"],
+    itemLevel: 610,
+  },
   {
     id: 219339,
     name: "Glyph-Etched Binding",
