@@ -17,13 +17,34 @@ export const materials: Material[] = [
   { id: 220192, name: "Ironclaw Alloy" },
   { id: 222558, name: "Boundless Cipher" },
   { id: 210808, name: "Arathor's Spear" },
+  { id: 222555, name: "Codified Greenwood" },
+  { id: 213611, name: "Writhing Sample" },
 ];
 
 export const craftedItemsData: CraftedItem[] = [
   {
+    id: 222568,
+    name: "Vagabond's Bounding Baton",
+    materials: [
+      { materialId: 213611, quantity: 20, quality: 0 },
+      { materialId: 222558, quantity: 10, quality: 3 },
+      { materialId: 222555, quantity: 3, quality: 2 },
+      { materialId: 222555, quantity: 12, quality: 3 },
+    ],
+    embellishedQuality: 3,
+    missiveQuality: 3,
+    concentrate: 0,
+    skillBoosterId: 1010,
+    crafter: "Thraut",
+    realm: "Sylvanas",
+    tags: ["staff", "intellect"],
+    itemLevel: 619,
+  },
+  {
     id: 217140,
     name: "Algari-Competitor's Gauntlets, Treads, Girdle",
     materials: [
+      { materialId: 219880, quantity: 20, quality: 3 },
       { materialId: 219880, quantity: 1, quality: 3 },
       { materialId: 212667, quantity: 75, quality: 3 },
     ],
